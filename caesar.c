@@ -11,7 +11,7 @@ int main (int argc, string argv[])
        int k = atoi(argv[1]), i; 
        string s = get_string("Plaintext: ");
        int n = strlen(s);
-       printf("\nCipher: ");
+       printf("ciphertext: ");
        for (i = 0; i < n; i++)
        {
            if (s[i] >= 'a' || s[i] <= 'z')
