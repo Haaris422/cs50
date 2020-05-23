@@ -8,7 +8,7 @@ int main (int argc, string argv[])
 {
    if ( argc == 2 && isdigit (*argv[1]))
    {
-       if (isalnum (*argv[1]))
+       if (isalpha (*argv[1]))
        {
            printf("Useage: ./caesar key\n");
            return 1;
