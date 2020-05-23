@@ -8,11 +8,11 @@ int main (int argc, string argv[])
 {
    if ( argc == 2 && isdigit(*argv[1]))
    {
-       int k = atoi(argv[1]), i;    
+       int k = atoi(argv[1]);   
        string s = get_string("plaintext: ");
        int n = strlen(s);
        printf("ciphertext: ");
-       for (i = 0; i < n; i++)
+       for (int i = 0; i <n; i++)
        {
            if (isalpha(s[i]))
            {
