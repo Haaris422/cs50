@@ -11,7 +11,7 @@ c;
 c candidate[MAX];
 int candidate_count;
 bool vote(string name);
-void print_winner(void);
+void print_winner();
 int main (int argc, string argv[])
 {
     if (argc < 2)
