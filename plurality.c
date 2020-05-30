@@ -17,7 +17,7 @@ int candidate_count;
 
 bool vote(string name);
 
-void print_winner (void);
+int print_winner (void);
 
 int main (int argc, string argv[])
 
@@ -71,7 +71,7 @@ bool vote(string name)
     return false;
 }
 
-void print_winner(void)
+int print_winner(void)
 {
     int w = 0;
     for (int i = 0; i < candidate_count; i++)
@@ -88,5 +88,5 @@ void print_winner(void)
             printf("%s \n", candidate[i].name);
         }
     }
-    return;
+    return 0;
 }
