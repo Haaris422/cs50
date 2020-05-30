@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
 #include <cs50.h>
 
 #define MAX 9
 
 typedef struct
 {
-    char* name;
+    string name;
     int vote;
 }
 c; 
@@ -16,27 +15,15 @@ c candidate[MAX];
 
 int candidate_count;
 
-bool vote(char name[]);
+bool vote(string name);
 
 void print_winner (void);
 
-int main (int argc, char *argv[])
+int main (int argc, string argv[])
 
 {
 
-    if (argc < 2)
-    {
-        printf("Usage: ./plurality[candidate...]\n");
-        return 1;
-    }
-   
     candidate_count = argc - 1;
-    
-    if (candidate_count > MAX)
-    {
-        printf("Maximum number of candidates is %d\n", MAX);
-        return 2;
-    }
     
     for (int i = 0; i < candidate_count ; i++)
     {
@@ -64,7 +51,7 @@ int main (int argc, char *argv[])
 
 
 
-bool vote(char name[])
+bool vote(string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
