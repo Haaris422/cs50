@@ -1,7 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
 
 #define MAX 9
 
@@ -16,9 +15,9 @@ c candidate[MAX];
 
 int candidate_count;
 
-bool vote(string name);
+bool vote(char name[]);
 
-int print_winner (void);
+void print_winner (void);
 
 int main (int argc, string argv[])
 
@@ -26,7 +25,7 @@ int main (int argc, string argv[])
 
     if (argc < 2)
     {
-        printf("Error");
+        printf("Usage: ./plurality[candidate...]\n");
         return 1;
     }
    
@@ -44,22 +43,25 @@ int main (int argc, string argv[])
       candidate[i].vote = 0;
     }
     
-    int voters = get_int("Number of voters: "), i;
+    int voter_count = get_int("Number of voters: "), i;
     
-    for (i = 0; i < voters; i++)
+    for (i = 0; i < voter_count; i++)
     {
-        string name = get_string("Vote: ");
+        char name[10];
+        printf("Vote: ");
+        scanf("%s", name);
         if (!vote(name))
         {
             printf("Invalid vote\n");
         }
     }
+    
     print_winner();
 }    
 
 
 
-bool vote(string name)
+bool vote(char name[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
@@ -72,7 +74,7 @@ bool vote(string name)
     return false;
 }
 
-int print_winner(void)
+void print_winner(void)
 {
     int w = 0;
     for (int i = 0; i < candidate_count; i++)
@@ -89,5 +91,5 @@ int print_winner(void)
             printf("%s \n", candidate[i].name);
         }
     }
-    return 0;
+    return;
 }
