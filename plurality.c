@@ -9,9 +9,9 @@ typedef struct
     string name;
     int vote;
 }
-c; 
+candidate; 
 
-c candidate[MAX];
+candidate candidates[MAX];
 
 int candidate_count;
 
@@ -27,8 +27,8 @@ int main (int argc, string argv[])
     
     for (int i = 0; i < candidate_count ; i++)
     {
-      candidate[i].name = argv[i + 1];
-      candidate[i].vote = 0;
+      candidates[i].name = argv[i + 1];
+      candidates[i].vote = 0;
     }
     
     int voter_count, i;
@@ -55,9 +55,9 @@ bool vote(string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(candidate[i].name, name) == 0)
+        if (strcmp(candidates[i].name, name) == 0)
         {
-            candidate[i].vote++;
+            candidates[i].vote++;
             return true;
         }
     }
@@ -69,16 +69,16 @@ void print_winner(void)
     int w = 0;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidate[i].vote > w )
+        if (candidates[i].vote > w )
         {
-            w = candidate[i].vote;
+            w = candidates[i].vote;
         }
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidate[i].vote == w)
+        if (candidates[i].vote == w)
         {
-            printf("%s \n", candidate[i].name);
+            printf("%s \n", candidates[i].name);
         }
     }
     return;
