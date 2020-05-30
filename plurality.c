@@ -12,13 +12,16 @@ typedef struct
 c; 
 
 c candidate[MAX];
+
 int candidate_count;
 
-int main (int argc, string argv[])
-{
-    
 bool vote(string name);
+
 void print_winner (void);
+
+int main (int argc, string argv[])
+
+{
 
     if (argc < 2)
     {
