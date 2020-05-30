@@ -31,15 +31,11 @@ int main (int argc, string argv[])
       candidates[i].vote = 0;
     }
     
-    int voter_count, i;
-    printf("Number of voters: ");
-    scanf("%d", &voter_count);
+    int voter_count = get_int("Number of voters: "), i;
     
     for (i = 0; i < voter_count; i++)
     {
-        char name[10];
-        printf("Vote: ");
-        scanf("%s", name);
+        string name = get_string("Vote: ");
         if (!vote(name))
         {
             printf("Invalid vote\n");
