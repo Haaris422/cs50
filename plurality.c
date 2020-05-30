@@ -1,12 +1,12 @@
-#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define MAX 9
 
 typedef struct
 {
-    string name;
+    char* name;
     int vote;
 }
 c; 
@@ -19,7 +19,7 @@ bool vote(char name[]);
 
 void print_winner (void);
 
-int main (int argc, string argv[])
+int main (int argc, char *argv[])
 
 {
 
@@ -43,7 +43,9 @@ int main (int argc, string argv[])
       candidate[i].vote = 0;
     }
     
-    int voter_count = get_int("Number of voters: "), i;
+    int voter_count, i;
+    printf("Number of voters: ");
+    scanf("%d", &voter_count);
     
     for (i = 0; i < voter_count; i++)
     {
