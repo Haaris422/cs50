@@ -124,12 +124,14 @@ int main(int argc, string argv[])
     }
     return 0;
 }
-
+// To make an index of candidate names for ease of use.
 int get_index(string name)
 {
     for (int i = 0; i < candidate_count; i++)
         if (strcmp(candidates[i].name, name) == 0)
-        return i;
+        {
+            return i;
+        }    
     return -1;    
 }
 // Record preference if vote is valid
@@ -149,7 +151,7 @@ void tabulate(void)
 {
     for (int i = 0; i < voter_count; i++)
     {
-        for (int j =0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             int candidate_index = preferences[i][j];
             if (!candidates[candidate_index].eliminated)
@@ -169,7 +171,7 @@ bool print_winner(void)
     {
         if (candidates[i].votes > (voter_count / 2))
         {
-            printf ("%s\n", candidates[i].name);
+            printf("%s\n", candidates[i].name);
             return true;
         }
     }
@@ -206,7 +208,9 @@ bool is_tie(int min)
     {
         if (!candidates[i].eliminated)
             if (candidates[i].votes != min)
+            {
                 return false;
+            }      
     }
     return true;
 }
@@ -214,12 +218,18 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidiates) in last place
 void eliminate(int min)
 {
-   for (int i = 0; i < candidate_count; i++)
-   {
-       if (!candidates[i].eliminated)
-       {
-           if (candidates[i].votes == min)
-               candidates[i].eliminated = true;
-       }
-   }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (!candidates[i].eliminated)
+        {
+            if (candidates[i].votes == min)
+            {
+                
+                candidates[i].eliminated = true;
+            }   
+        } 
+    }
 }
+
+
+
