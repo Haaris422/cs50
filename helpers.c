@@ -1,6 +1,6 @@
 #include "helpers.h"
 #include <math.h>
-#include<cs50.h>
+#include <cs50.h>
 
 //Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -10,8 +10,8 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             RGBTRIPLE pixel = image[i][j];
-            int average = round((pixel.rgbtRed + pixel.rgbtBlue + pixel.rgbtGreen)/3.0);
-            image[i][j].rgbtRed = image[i][j].rgbtBlue = image[i][j].rgbtGreen = average;
+            int average = round((pixel.rgbtRed + pixel.rgbtBlue + pixel.rgbtGreen) / 3.0);
+            image[i][j].rgbtRed = image[i][j].rgbtBlue = image[i][j].rgbtGreen = average; // To set r,g & b's values to their average.
         }
     }
     return;
@@ -20,28 +20,28 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 int cap(int value)
 {
-    return value > 255 ? 255 : value;
+    return value > 255 ? 255 : value; // To limit to 255.
 }
 
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < width; j++) // Formula used to convert to sepia.
         {
             RGBTRIPLE pixel = image[i][j];
-            image[i][j].rgbtRed = cap(round(0.393*pixel.rgbtRed + 0.769*pixel.rgbtGreen + 0.189*pixel.rgbtBlue));
-            image[i][j].rgbtGreen = cap(round(0.349*pixel.rgbtRed + 0.686*pixel.rgbtGreen + 0.168*pixel.rgbtBlue));
-            image[i][j].rgbtBlue = cap(round(0.272*pixel.rgbtRed + 0.534*pixel.rgbtGreen + 0.131*pixel.rgbtBlue));
+            image[i][j].rgbtRed = cap(round(0.393 * pixel.rgbtRed + 0.769 * pixel.rgbtGreen + 0.189 * pixel.rgbtBlue));  
+            image[i][j].rgbtGreen = cap(round(0.349 * pixel.rgbtRed + 0.686 * pixel.rgbtGreen + 0.168 * pixel.rgbtBlue));
+            image[i][j].rgbtBlue = cap(round(0.272 * pixel.rgbtRed + 0.534 * pixel.rgbtGreen + 0.131 * pixel.rgbtBlue));
         }
     }    
     return;
 }
 
 // Reflect image horizontally
-void swap (RGBTRIPLE *pixel1, RGBTRIPLE *pixel2)
+void swap(RGBTRIPLE *pixel1, RGBTRIPLE *pixel2) // To swap the adresses of the left hand & right hand pixels.
 {
-    RGBTRIPLE temp = *pixel1;
+    RGBTRIPLE temp = *pixel1; // Here temp is used as a temporary storage place.
     *pixel1 = *pixel2;
     *pixel2 = temp;
 }
@@ -62,29 +62,30 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 bool is_valid_pixel(int i, int j, int height, int width)
 {
-    return i >= 0 && i < height && j >= 0 && j < width;
+    return i >= 0 && i < height && j >= 0 && j < width;  // To make the 3X3 grid for each pixel in the image.
 }
 
 RGBTRIPLE get_blurred_pixel(int i, int j, int height, int width, RGBTRIPLE image[height][width])
 {
-    int redValue, blueValue, greenValue; redValue = blueValue = greenValue = 0;
-    int numOfValidPixels = 0;
+    int redValue, blueValue, greenValue; // New values of the colours.
+    redValue = blueValue = greenValue = 0;
+    int numOfValidPixels = 0; // To limit the no. of pixels taken as part of the grid. 
     for (int di = -1; di <= 1; di++)
     {
         for (int dj = -1; dj <= 1; dj++)
         {
-            int new_i = i +di;
-            int new_j = j +dj;
-            if (is_valid_pixel(new_i, new_j, height, width))
+            int new_i = i + di;
+            int new_j = j + dj;
+            if (is_valid_pixel(new_i, new_j, height, width)) // To form a loop to make grid for each successive pixel.
             {
                 numOfValidPixels++;
-                redValue += image[new_i][new_j].rgbtRed;
+                redValue += image[new_i][new_j].rgbtRed;  
                 blueValue += image[new_i][new_j].rgbtBlue;
                 greenValue += image[new_i][new_j].rgbtGreen;
             }
         }
     }
-    RGBTRIPLE blurred_pixel;
+    RGBTRIPLE blurred_pixel; // Name given to the active pixel.
     blurred_pixel.rgbtRed = round((float) redValue / numOfValidPixels);
     blurred_pixel.rgbtBlue = round((float) blueValue / numOfValidPixels);
     blurred_pixel.rgbtGreen = round((float) greenValue / numOfValidPixels);
@@ -98,7 +99,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            new_image[i][j] = get_blurred_pixel(i, j, height, width, image);
+            new_image[i][j] = get_blurred_pixel(i, j, height, width, image); // A new image made of the blurred pixels is formed.
         }
         
     }
@@ -106,7 +107,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j] = new_image[i][j];
+            image[i][j] = new_image[i][j]; // A copy of the new image is stored in the original.
         }
         
     }
