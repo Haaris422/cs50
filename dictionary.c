@@ -9,7 +9,7 @@
 #include <string.h>
 #include <stdio.h>
 
-#define HASH_SIZE 1000
+#define HASH_SIZE 26
 
 typedef struct node
 {
