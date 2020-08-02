@@ -11,7 +11,6 @@
 
 #define HASH_SIZE 1000
 
-// Represents a node in a hash table
 typedef struct node
 {
     char word[LENGTH + 1];
@@ -19,12 +18,10 @@ typedef struct node
 }
 node;
 
-
-// Hash table
 node *hashtable[HASH_SIZE];
 
-unsigned int num_words;
-bool is_loaded_dict;
+unsigned int num_words = 0;
+bool is_loaded_dict = false;
 
 unsigned int hash(const char *word)
 {
