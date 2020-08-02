@@ -5,7 +5,7 @@
 #include <string.h>
 #include <strings.h>
 
-// Represents a node in a hash hashtable
+// Represents a node in a hash table
 typedef struct node
 {
     char word[LENGTH + 1];
@@ -13,12 +13,12 @@ typedef struct node
 }
 node;
 
-// Number of buckets in hash hashtable
+// Number of buckets in hash table
 const unsigned int N = 26;
 unsigned int key;
 unsigned int num_word = 0;
 
-// Hash hashtable
+// Hash table
 node *hashtable[N];
 
 // Returns true if word is in dictionary else false
@@ -35,7 +35,7 @@ bool check(const char *word)
         }
         else
         {
-          cursor = cursor->next;
+            cursor = cursor->next;
         }
     }
     return false;
@@ -44,12 +44,12 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-   unsigned int x = (unsigned int) word[0];
-    if (x >= 'a' && x <= 'z')
+    unsigned int x = (unsigned int) word[0];
+    if (x >= 'a' && x <= 'z') //TO convert lowercase alphabets.
     {
         x = x - 97;
     }
-    else if(x >= 'A' && x <= 'Z')
+    else if (x >= 'A' && x <= 'Z') //To convert uppercase alphabets.
     {
         x = x - 65;
     }
@@ -65,14 +65,14 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    while (fscanf(file, "%s", w) != EOF)
+    while (fscanf(file, "%s", w) != EOF) //checks if file is not at its end.
     {
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
             return false;
         }
-        int index = hash(w);
+        int index = hash(w); //index of words.(w = word)
         strcpy(new_node->word, w);
         if (hashtable[index] == NULL)
         {
@@ -93,9 +93,9 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
-    if (num_word > 0)
+    if (num_word > 0) 
     {
-         return num_word;
+        return num_word;
     }
     return 0;
 }
