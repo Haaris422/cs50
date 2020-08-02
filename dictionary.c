@@ -37,7 +37,7 @@ unsigned int hash(const char *word)
 
         hash = ((hash << 3) + n) % HASH_SIZE;
     }
-    return hash;
+    return false;
 }
 
 
