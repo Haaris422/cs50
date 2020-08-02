@@ -5,7 +5,7 @@
 #include <string.h>
 #include <strings.h>
 
-// Represents a node in a hash table
+// Represents a node in a hash hashtable
 typedef struct node
 {
     char word[LENGTH + 1];
@@ -13,20 +13,20 @@ typedef struct node
 }
 node;
 
-// Number of buckets in hash table
+// Number of buckets in hash hashtable
 const unsigned int N = 26;
 unsigned int key;
-unsigned int word_count = 0;
+unsigned int num_word = 0;
 
-// Hash table
-node *table[N];
+// Hash hashtable
+node *hashtable[N];
 
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
     unsigned int hashvalue = hash(word);
     node *cursor;
-    cursor = table[hashvalue];
+    cursor = hashtable[hashvalue];
     while (cursor != NULL)
     {
         if (strcasecmp(word, cursor->word) == 0)
@@ -74,17 +74,17 @@ bool load(const char *dictionary)
         }
         int index = hash(w);
         strcpy(new_node->word, w);
-        if (table[index] == NULL)
+        if (hashtable[index] == NULL)
         {
-            table[index] = new_node;
+            hashtable[index] = new_node;
             new_node->next = NULL;
         }
         else
         {
-            new_node->next = table[index];
-            table[index] = new_node;
+            new_node->next = hashtable[index];
+            hashtable[index] = new_node;
         }
-        word_count++;
+        num_word++;
     }
     fclose(file);
     return true;
@@ -93,9 +93,9 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
-    if (word_count > 0)
+    if (num_word > 0)
     {
-         return word_count;
+         return num_word;
     }
     return 0;
 }
@@ -105,7 +105,7 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
-        node *cursor = table[i];
+        node *cursor = hashtable[i];
         while (cursor != NULL)
         {
             node *tmp = cursor;
