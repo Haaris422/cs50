@@ -18,10 +18,12 @@ typedef struct node
 }
 node;
 
-node *hashtable[HASH_SIZE];
+
 
 unsigned int num_words = 0;
 bool is_loaded_dict = false;
+
+node *hashtable[HASH_SIZE];
 
 unsigned int hash(const char *word)
 {
@@ -85,16 +87,16 @@ bool load(const char *dictionary)
        
         strcpy (new_nodeptr -> word, word);
         int index = hash(word);
-        //if (hashtable[index] == NULL)
-        //{
-        //    new_nodeptr -> next = NULL;
-        //    hashtable[index] = new_nodeptr;
-        // }
-        //else
-        // {
-             new_nodeptr -> next = hashtable[index];
-             hashtable[index] = new_nodeptr;
-         //} 
+        if (hashtable[index] == NULL)
+        {
+           new_nodeptr -> next = NULL;
+           hashtable[index] = new_nodeptr;
+        }
+        else
+        {
+            new_nodeptr -> next = hashtable[index];
+            hashtable[index] = new_nodeptr;
+        } 
     }
     fclose(infile);
     is_loaded_dict = true;
