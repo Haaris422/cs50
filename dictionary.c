@@ -26,8 +26,26 @@ node *hashtable[HASH_SIZE];
 unsigned int num_words;
 bool is_loaded_dict;
 
+unsigned int hash(const char *word)
+{
+    int hash = 0;
+    int n;
+    for (int i = 0; word[i] != '\0'; i++)
+    {
+        if (isalpha(word[i]))
+        {
+            n = word[i] - 'a' + 1;
+        }
+        else
+        {
+            n = 27;
+            hash = ((hash << 3) + n) % HASH_SIZE;
+        }
+    }
+    return hash;
+}
 
-// Returns true if word is in dictionary else false
+
 bool check(const char *word)
 {
     char check_word[strlen(word)];
@@ -51,25 +69,6 @@ bool check(const char *word)
     return false;
 }
 
-// Hashes word to a number
-unsigned int hash(const char *word)
-{
-    int hash = 0;
-    int n;
-    for (int i = 0; word[i] != '\0'; i++)
-    {
-        if (isalpha(word[i]))
-        {
-            n = word[i] - 'a' + 1;
-        }
-        else
-        {
-            n = 27;
-            hash = ((hash << 3) + n) % HASH_SIZE;
-        }
-    }
-    return hash;
-}
 
 // Loads dictionary into memory, returning true if successful else false
 bool load(const char *dictionary)
