@@ -13,7 +13,6 @@ for i in range(len(text)):
         words += 1
     elif text[i] in ['?', '.', '!']:
         sentences += 1
-print(f"letter : {letters}, words = {words}, sentences  = {sentences }")
 L = (letters/words * 100)
 S = (sentences/words *100)
 I = round(float(0.0588 * L - 0.296 * S - 15.8))
