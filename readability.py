@@ -14,7 +14,6 @@ for i in range(len(text)):
 L = (letters/words * 100)
 S = (sentences/words *100)
 I = round(float(0.0588 * L - 0.296 * S - 15.8))
-print(f"letter : {letters}, words = {words}, sentences  = {sentences }")
 if I < 1:
     print("Before Grade 1")
 elif I >= 16:
