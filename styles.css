@@ -1,0 +1,69 @@
+.title{
+    text-align:center;
+    background-color:rgb(38, 38, 38); /*Sets light clay colour to the tittle text*/
+    color:white;
+    margin:20px; /*Top Margin*/
+}
+.para{
+    text-align:center;
+    font-weight: bold;
+    margin: 25px;
+    text-decoration: underline; /*For main Text.*/
+    font-size:large;
+}
+.b{
+    background-color:darkgray; /*Full page colour.*/
+}
+.cover-container {
+  max-width: 62em;
+}
+.masthead {
+  margin-bottom: 2rem;
+}
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5); /*Makes navbar gray.*/
+  background-color: black;
+  border-bottom: .25rem solid transparent; /*Makes it a little transparrent.*/
+}
+
+/*To highlight heading with cursor on it.*/
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active { /*Highlights active site.*/
+  color: white;
+  border-bottom-color: white;
+}
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700; /*Darkens font*/
+}
+
+.btt {
+  margin: 200px;
+  margin-right:50px;
+  margin-bottom:25px;
+}
+/*To highlight searched text.*/
+#searchtext span{
+    background-color:#FF9;
+    color:#555;
+}
+
+div {
+    padding: 10px; 
+}

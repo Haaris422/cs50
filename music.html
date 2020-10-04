@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang ="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script>
+        //To make the search bar highlight any text, on clicking, that is entered in it.
+          function highlightSearch() {
+            var text = document.getElementById("query").value;
+            var query = new RegExp("(\\b" + text + "\\b)", "gim");
+            var e = document.getElementById("searchtext").innerHTML;
+            var enew = e.replace(/(<span>|<\/span>)/igm, "");         
+            document.getElementById("searchtext").innerHTML = enew;
+            var newe = enew.replace(query, "<span>$1</span>");
+            document.getElementById("searchtext").innerHTML = newe;
+          }
+        </script>
+        <title>Music</title>
+    </head>
+    <body class = "b">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+          <header class="masthead mb-auto">
+            <div class="inner">
+              <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Favourite 4s</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/index.html#">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/music.html">Albums<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/movies.html">Movies</a>
+          </li>
+          <li class ="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/anime.html">Anime</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" id="query">
+          <input name="searchit" type="button" value="Search" class="btn btn-outline-success my-2 my-sm-0" onClick="highlightSearch()">
+        </form>
+      </div>
+    </nav>
+    
+        <main role="main">
+          <div id = "searchtext">
+          <section class="jumbotron b text-center">
+            <div class="container">
+              <!--Main Heading-->
+              <h1 class="jumbotron-heading title">4 Albums</h1>
+              <!--Sub Heading-->
+              <p class="para">The following are just 4 of my favourite albums of all time.</p>
+            </div>
+          </section>
+    <!--To create a grid like design to display content.-->
+          <div class="album py-5 bg-dark">
+            <div class="container">
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://open.spotify.com/album/1Lzi2p6CUH156zbJTcOjNX" target="_blank">
+                      <img class="card-img-top" src="CK.jpg" alt="Card image cap">
+                    </a>  
+                    <div class="card-body">
+                      <h6 class="para">In The Court of The Crimson King - King Crimson</h6>
+                      <p class="card-text">I still don't understand how or why this album works, but it just does. King Crimson's debut LP is one of the best of its genre and a must listen for anyone trying to get into prog-rock.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV" target="_blank">
+                      <img class="card-img-top" src="KSG..png" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">Kids See Ghosts (Self Title)</h6>
+                      <p class="card-text">Kanye West & Kid Cudi team up and use their personal experiences with mental health struggles to make one the most uplifting albums of this emo-rap era. In my humble opinion, it's even better than TattleTales.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://open.spotify.com/album/621cXqrTSSJi1WqDMSLmbL" target="_blank">
+                      <img class="card-img-top" src="T.png" alt="Card image cap">
+                    </a>  
+                    <div class="card-body">
+                      <h6 class="para">Trench - Twenty One Pilots</h6>
+                      <p class="card-text">I never thought a ToP album would be one of my favourite albums, but its REALLY good. Its the first album I ever listened to in its entirety and eventhough its probably not as good as the other 3, it still is very special to me.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="col-md-4 mx-auto">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://open.spotify.com/album/4hnqM0JK4CM1phwfq1Ldyz" target="_blank">
+                      <img class="card-img-top" src="TIH.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">This Is Happening - LCD Soundsystem</h6>
+                      <p class="card-text">I only recently listened to this album and its already one of my favourites. Its just so good, it's hard for me to describe why, so all I can say as justification for it being here is to ask you to listen to "Dance Yrself Clean" and you will understand why I've hyped it so much.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
