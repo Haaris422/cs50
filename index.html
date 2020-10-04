@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script>
+          function highlightSearch() {
+            var text = document.getElementById("query").value;
+            var query = new RegExp("(\\b" + text + "\\b)", "gim");
+            var e = document.getElementById("searchtext").innerHTML;
+            var enew = e.replace(/(<span>|<\/span>)/igm, "");
+            document.getElementById("searchtext").innerHTML = enew;
+            var newe = enew.replace(query, "<span>$1</span>");
+            document.getElementById("searchtext").innerHTML = newe;
+          }
+        </script>
+        <title>My Webpage</title>
+    </head>
+    <body class ="b">
+      <!--From bootstrap, to make a navigation bar-->
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+          <header class="masthead mb-auto">
+            <div class="inner">
+              <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Favourite 4s</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!--clicking on any category opens that webpage.-->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/index.html">Home<span class="sr-only">(current)</span></a> <!--To highlight the "Home" page as the currently selected webpage. when any other categoriee si selected, that category gets highlighted.-->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/music.html">Albums</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/movies.html">Movies</a>
+          </li>
+          <li class ="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/anime.html">Anime</a>
+          </li>
+        </ul>
+        <!--To make a search bar-->
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" id="query">
+          <input name="searchit" type="button" value="Search" class="btn btn-outline-success my-2 my-sm-0" onClick="highlightSearch()">
+        </form>
+      </div>
+    </nav>
+            </div>
+          </header>
+    
+          <main role="main" class="inner cover">
+            <div id = "searchtext">
+            <h1 class="title">Favourite 4s.</h1> <!-- To add The Name of the website-->
+            <!-- Samll Discription-->
+            <p class="lead para">Welcome to "Favourite 4s", the ONLY place on the internet where you can find uninformed opinions for FREE!*(for now at least). Here, I have shared my opinions on my favourite Albums, Movies & Animes. NOTE: I know Iam a normie when it comes to being a part of these communitys, so pls dont bully me, I Indian, I no speak Englis.</p>
+          </main>
+        </div>
+        
+        <!--To add more functionality (provided by bootstrap) to the page.-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
+

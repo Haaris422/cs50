@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang ="en">
+    <head>
+        <style>
+            
+        </style>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script>
+          function highlightSearch() {
+            var text = document.getElementById("query").value;
+            var query = new RegExp("(\\b" + text + "\\b)", "gim");
+            var e = document.getElementById("searchtext").innerHTML;
+            var enew = e.replace(/(<span>|<\/span>)/igm, "");
+            document.getElementById("searchtext").innerHTML = enew;
+            var newe = enew.replace(query, "<span>$1</span>");
+            document.getElementById("searchtext").innerHTML = newe;
+          }
+        </script>
+        <title>Anime</title>
+    </head>
+    <body class = "b">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+          <header class="masthead mb-auto">
+            <div class="inner">
+              <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Favourite 4s</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/index.html#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/music.html">Albums</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/movies.html">Movies</a>
+          </li>
+          <li class ="nav-item active">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/anime.html">Anime<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" id="query">
+          <input name="searchit" type="button" value="Search" class="btn btn-outline-success my-2 my-sm-0" onClick="highlightSearch()">
+        </form>
+      </div>
+    </nav>
+    
+        <main role="main">
+          <div id = "searchtext">
+          <section class="jumbotron b text-center">
+            <div class="container">
+              <h1 class="jumbotron-heading title">4 Animes</h1>
+              <p class="para">The following are just 4 of my favourite animes of all time.</p>
+            </div>
+          </section>
+    
+          <div class="album py-5 bg-dark">
+            <div class="container">
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://www.crunchyroll.com/en-gb/samurai-champloo" target="_blank">
+                      <img class="card-img-top" src="SC.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">Samurai Champloo</h6>
+                      <p class="card-text">Samurai Champloo is one of the most fun shows i have ever seen. What really seperates it from most anime is its smooth, jazzy & lo-fi soundtrack that makes the show have its own distinct groovy atmosphere.oh and its better than Cowboy Bebop.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href = "https://www.crunchyroll.com/en-gb/one-punch-man" target="_blank">
+                      <img class="card-img-top" src="OPM.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">One Punch Man</h6>
+                      <p class="card-text">One Punch Man is one the best takes on the superhero genre in all of anime. OPM's protagonist is the strongest superhero in the world....because of this he is depressed. It sounds stupid, but when you watch the show it starts to make sense. </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://www.crunchyroll.com/en-gb/jojos-bizarre-adventure" target="_blank">
+                      <img class="card-img-top" src="JOJO.jpg" alt="Card image cap">
+                    </a>  
+                    <div class="card-body">
+                      <h6 class="para">Jojo's Bizarre Adventure</h6>
+                      <p class="card-text">There is no way I could describe the experience of watching Jojo's in this small section, so all I would say is that its great and its everywhere and if you want to be one of cool kids, you should watch it ASAP.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-4 mx-auto">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://www.crunchyroll.com/en-gb/naruto" target="_blank">
+                      <img class="card-img-top" src="NO.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">Naruto</h6>
+                      <p class="card-text">Like many people, Naruto was the first PROPER anime that I ever saw. it is the gateway that leads people into the world of anime. Its the story about Naruto, an orphan, trying his best to be recognised and appriciated by the people of his village. Objectively, its not as good as the other anime listed here, but it is probably still my favourite anime of all time because of how much it has impacted my life.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang ="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script>
+          function highlightSearch() {
+            var text = document.getElementById("query").value;
+            var query = new RegExp("(\\b" + text + "\\b)", "gim");
+            var e = document.getElementById("searchtext").innerHTML;
+            var enew = e.replace(/(<span>|<\/span>)/igm, "");
+            document.getElementById("searchtext").innerHTML = enew;
+            var newe = enew.replace(query, "<span>$1</span>");
+            document.getElementById("searchtext").innerHTML = newe;
+          }
+        </script>
+        <title>Movies</title>
+    </head>
+    <body class = "b">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+          <header class="masthead mb-auto">
+            <div class="inner">
+              <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Favourite 4s</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/index.html#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/music.html">Albums</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/movies.html">Movies<span class="sr-only">(current)</span></a>
+          </li>
+          <li class ="nav-item">
+            <a class="nav-link" href="https://8b2f5758-fca4-48f2-8e49-0acfb626c187-ide.cs50.xyz:8080/anime.html">Anime</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" id ="query">
+          <input name="searchit" type="button" value="Search" class="btn btn-outline-success my-2 my-sm-0" onClick="highlightSearch()">
+        </form>
+      </div>
+    </nav>
+    
+        <main role="main">
+          <div id = "searchtext">
+          <section class="jumbotron b text-center">
+            <div class="container">
+              <h1 class="jumbotron-heading title">4 Movies</h1>
+              <p class="para">The following are just 4 of my favourite movies of all time.</p>
+            </div>
+          </section>
+    
+          <div class="album py-5 bg-dark">
+            <div class="container">
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://www.amazon.com/GoodFellas-Robert-Niro/dp/B0016YBFZ8" target="_blank">
+                      <img class="card-img-top" src="G.jpg" alt="Card image cap">
+                    </a>  
+                    <div class="card-body">
+                      <h6 class="para">Goodfellas</h6>
+                      <p class="card-text">Goodfellas is easily the best film about the mob ever made. The direction, the acting, the cinematography,the....everything is just awesome. My only gripe with this movie is that Kevin Mcallister does'nt get to finish off Tommy, other than that, great movie, solid 9/10.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+           
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://www.amazon.com/Snowpiercer-Chris-Evans/dp/B00LFF3MKO" target="_blank">
+                      <img class="card-img-top" src="SP.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">Snowpiercer</h6>
+                      <p class="card-text">Snowpiercer is one of the most underrated movies I have ever seen. Its a simple concept for a Sci-fi movie but it is executed so well that it makes you become invested in the lives of these characters. BTW its better than Parasite, dont @ me.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://www.amazon.com/Kung-Fu-Hustle-English-Subtitled/dp/B000I8ES5C" target="_blank">
+                      <img class="card-img-top" src="KFH.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">Kung-Fu Hustle</h6>
+                      <p class="card-text">It is one of the funniest movies of all time.Period. Kung-Fu Hustle mixes eastern action and slap stick comedy so well that most people forget that it also has a suprisingly complex protagonist who goes through a funny yet emotional character arc that leads to one the most over the top fights I have seen in any movie.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
+                <div class="col-md-4 mx-auto">
+                  <div class="card mb-4 shadow-sm">
+                    <a href ="https://www.amazon.com/Idiots-English-Subtitled-Aamir-Khan/dp/B004R16PFC" target="_blank">
+                      <img class="card-img-top" src="3I.jpg" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                      <h6 class="para">3 Idiots</h6>
+                      <p class="card-text">I saw this movie in 2010 when it came out and ever since then i have watched several movies from several different genres & countrys....but...3 Idiots is still my favourite and probably will always be my favourite. Its a movie about how true friendship, though hard to find and maintain, stay forever. Its funny, its emotional, its motivational, its bollywood at its best.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
